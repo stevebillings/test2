@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies { classpath 'com.blackducksoftware.integration:common-gradle-plugin:0.0.+' }
+}
+plugins { id 'groovy' }
+
+version = '38.3.3'
+
+apply plugin: 'com.blackducksoftware.integration.library'
+
+dependencies {
+    compile 'com.blackducksoftware.integration:test:9.0.5'
+    compile 'com.blackducksoftware.integration:hub-common-api:4.4.3.2'
+    compile 'com.blackducksoftware.integration:hub-common-reporting:7.0.6'
+    compile 'com.blackducksoftware.integration:integration-bdio:16.1.3'
+    compile 'com.blackducksoftware.integration:phone-home-client:0.15.6'
+
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.12'
+    testCompile 'org.mockito:mockito-core:2.18.3'
+}
